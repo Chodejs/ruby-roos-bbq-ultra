@@ -1,11 +1,83 @@
 .siteHeader {
+  /* Layout */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  
+  /* Safety Gap: Prevents the logo/nav/button from touching */
+  gap: 2rem; 
+  
+  /* Spacing */
+  padding: 1.5rem 3rem; /* Increased padding for a grander look */
   border-bottom: 1px solid #ccc;
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
 }
 
 .headerH1 {
-    color: rgb(255, 94, 0);
+    color: var(--main-orange);
+    margin: 0;
+    font-size: 2rem;
+    white-space: nowrap; /* Stops "Ruby Roo's BBQ" from wrapping */
+    
+    /* If you added an image icon inside the H1, this aligns it */
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- Nav Styles --- */
+
+.nav {
+    /* Pushes the nav to the center if there is space */
+    margin: 0 auto; 
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem; /* Generous spacing between links */
+    padding: 0;
+    margin: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    font-weight: 700; /* Made them a bit bolder */
+    font-size: 1.2rem; /* Made them a bit bigger */
+    color: inherit;
+    transition: color 0.2s ease;
+    position: relative;
+    padding: 5px 0; /* Increases clickable area */
+}
+
+.nav a:hover {
+    color: var(--main-orange);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px; /* Thicker underline */
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-orange);
+    transition: width 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive adjustment: stack them if the screen is too small */
+@media (max-width: 768px) {
+    .siteHeader {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .nav ul {
+        gap: 1.5rem;
+    }
 }

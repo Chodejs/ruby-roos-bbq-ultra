@@ -52,7 +52,7 @@ export default function Menu() {
                     <div className={styles.menuCard} key={item.id}>
                         <h5>{item.name}</h5>
                         <span>{item.category}</span>
-                        <p>{item.price}</p>
+                        <p>${item.price.toFixed(2)}</p>
                     </div>
                 ))}
             </div> 
