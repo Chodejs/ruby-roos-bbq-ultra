@@ -2,6 +2,7 @@
   /* 🎨 Brand Variables */
   --main-orange: rgb(255, 94, 0);
   --charcoal: #242424;
+  --fire-grilled: rgba(255, 255, 255, 0.87);
   --light-gray: #f0f0f0;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -9,13 +10,25 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--fire-grilled);
   background-color: var(--charcoal);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+/* 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -27,13 +40,21 @@ a:hover {
   color: #535bf2;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
   justify-content: center;
+  transition: all 0.3s ease; /* Smooth transition for the effect */
 }
 
 h1 {

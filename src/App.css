@@ -10,12 +10,12 @@
 }
 
 .light {
-  background-color: #ffffff;
+  background-color: var(--light-gray);
   color: #333333;
 }
 
 .smoked {
-  background-color: #2b2b2b; /* Dark charcoal */
+  background-color: #2b2b2b; /* Dark charcoal - slightly different than body BG */
   color: #f0f0f0;
 }
 

@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 export default function Header({ isSmoked, toggleSmoke }) {
   
   return (
-    <header className={styles.siteHeader}>
+    <header className={styles.siteHeader} id='home'>
       <h1 className={styles.headerH1}>Ruby Roo's BBQ 🍖</h1>
       
       {/* Added Navigation 👇 */}

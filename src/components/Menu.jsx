@@ -22,7 +22,7 @@ export default function Menu() {
     : menuItems.filter(item => item.category === currentCategory);
 
     return (
-        <section className={styles.menuSection}>
+        <section className={styles.menuSection} id="menu">
             <h3 className={styles.menuH3}>Our Menu</h3>
             <div className={styles.filters}>
                 <button 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,6 +13,20 @@ function App() {
   const toggleSmoke = () => {
     setIsSmoked((prev) => !prev);
   };
+    // Sync body background color with the current theme
+  useEffect(() => {
+    if (isSmoked === true) { 
+      document.body.style.backgroundColor = 'var(--charcoal)';
+    } else { 
+      document.body.style.backgroundColor = 'var(--fire-grilled)'; 
+    }
+    
+    // Cleanup function to reset if needed
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, [isSmoked]); 
+  
 
   return (
     <div className={`app-container ${isSmoked ? 'smoked' : 'light'}`}>
