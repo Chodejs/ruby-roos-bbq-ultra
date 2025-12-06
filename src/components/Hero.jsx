@@ -1,5 +1,5 @@
 import styles from './Hero.module.css';
-import logo from '../assets/images/ruby-logo1.png';
+import logo from '../assets/images/ruby-logo1.jpg';
 
 export default function Hero() {
 
