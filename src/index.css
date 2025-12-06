@@ -2,7 +2,6 @@
   /* 🎨 Brand Variables */
   --main-orange: rgb(255, 94, 0);
   --charcoal: #242424;
-  --fire-grilled: rgba(255, 255, 255, 0.87);
   --light-gray: #f0f0f0;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -10,25 +9,13 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--fire-grilled);
+  color: rgba(255, 255, 255, 0.87);
   background-color: var(--charcoal);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-/* 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-} */
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 a {
@@ -40,21 +27,19 @@ a:hover {
   color: #535bf2;
 }
 
-html {
+/* Updated for Full Height Fix */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+/* Ensure the React root div takes up at least the full viewport height */
+#root {
   min-height: 100vh;
-  justify-content: center;
-  transition: all 0.3s ease; /* Smooth transition for the effect */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 h1 {
@@ -89,7 +74,28 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+  /* Note: Default button styles here are now overridden by the specific classes below */
+}
+
+/* ⚪️ Force Light Mode Buttons when in 'Fire-grilled' (light) theme */
+.light button {
+  background-color: #f9f9f9;
+  color: #213547;
+  border-color: #ccc;
+}
+
+.light button:hover {
+  border-color: #646cff;
+  background-color: #ffffff;
+}
+
+/* ⚫️ Force Dark Mode Buttons when in 'Smoked' (dark) theme */
+.smoked button {
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+  border-color: transparent;
+}
+
+.smoked button:hover {
+  border-color: var(--main-orange);
 }
